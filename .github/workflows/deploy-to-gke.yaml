@@ -28,7 +28,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
           project_id: assesment-412710
-          service_account_key: ${{ secrets.GKE_SA_KEY }}
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
       - name: Set Kubernetes context
         run: gcloud container clusters get-credentials my-cluster --zone us-central1-a

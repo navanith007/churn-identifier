@@ -12,7 +12,7 @@
 <h3 align="center">END TO END GPT FROM SCRATCH</h3>
 
   <p align="center">
-    This repository is designed for normal purposes, providing a comprehensive guide on constructing a GPT model from scratch using PyTorch, training the model with textual data, and deploying it.
+    This repository is designed for normal purposes, providing comprehensive guide on constructing a GPT model from scratch using PyTorch, training the model with textual data, and deploying it.
     <br />
     <a href="https://docs.google.com/document/d/1HgSY3pI5c_SjbEVn77Ve8zJ8VWmXwi9RkZY4czJx-Qg/edit"><strong>Explore the docs »</strong></a>
     <br />

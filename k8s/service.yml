@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: churn-load-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 8005
+  selector:
+    type: backend
+    app: churn
+  type: LoadBalancer

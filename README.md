@@ -75,7 +75,7 @@ This project has developed for platform independent using contairization.
 
 ### Prerequisites
 
-Ensure that Python 3.9 is installed on your system. If you are using a Mac, refer to the provided blog link for detailed
+Ensure that Python 3.9 is installed on your system. If you are using a Mac refer to the provided blog link for detailed
 instructions on installing a specific Python version. Please review the information in the blog for
 guidance. [python installation](https://www.freecodecamp.org/news/python-version-on-mac-update/)
 

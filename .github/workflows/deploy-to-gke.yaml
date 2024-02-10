@@ -34,8 +34,8 @@ jobs:
 
       - name: Push Docker image to GCR
         run: |
-          docker push gcr.io/assesment-412710/your-image-name:latest
-          docker push gcr.io/assesment-412710/your-image-name:$GITHUB_SHA
+          docker push gcr.io/assesment-412710/churn-app:latest
+          docker push gcr.io/assesment-412710/churn-app:$GITHUB_SHA
 
       - name: Set up kubectl
         uses: google-github-actions/setup-gcloud@v0.2.0

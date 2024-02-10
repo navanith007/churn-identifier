@@ -44,4 +44,6 @@ jobs:
             GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
             gcloud container clusters get-credentials autopilot-cluster-2 --region us-central1
-            kubectl apply -f k8s/deployment.yaml
+            kubectl apply -f k8s/deployment.yml
+            kubectl apply -f k8s/service.yml
+          

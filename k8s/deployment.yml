@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  churn-identifier
+  labels:
+    type: backend
+    app: churn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: backend
+      app: churn
+  template:
+    metadata:
+      name: churn-ident
+      labels:
+        type: backend
+        app: churn
+    spec:
+      containers:
+        - name: churn-app
+          image: gcr.io/assesment-412710/churn-app:latest
+          ports:
+            - containerPort: 8005

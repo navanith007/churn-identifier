@@ -25,9 +25,8 @@ jobs:
       - name: Authenticate with GCR
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          version: 'v2'
           project_id: assesment-412710
-          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          service_account_key: ${{secrets.GCP_SERVICE_ACCOUNT_KEY}}
 
       - name: Configure Docker to use gcloud as a credential helper
         run: |

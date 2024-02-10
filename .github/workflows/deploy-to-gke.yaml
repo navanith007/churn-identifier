@@ -13,18 +13,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t my-app:latest .
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build the Docker image
+        run: |
+          docker build . --tag gcr.io/assesment-412710/churn-app:latest
+          docker tag gcr.io/assesment-412710/churn-app:latest gcr.io/assesment-412710/churn-app:$GITHUB_SHA
+
 
       - name: Authenticate with GCR
-        run: | 
-          gcloud auth activate-service-account assesment-412710@assesment-412710.iam.gserviceaccount.com --key-file=${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-          gcloud auth configure-docker
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: 'v2'
+          project_id: assesment-412710
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
-      - name: Push to GCR
+      - name: Configure Docker to use gcloud as a credential helper
         run: |
-          docker tag my-app:latest gcr.io/assesment-412710/my-app:latest
-          docker push gcr.io/assesment-412710/my-app:latest
+          gcloud auth configure-docker gcr.io
+
+      - name: Push Docker image to GCR
+        run: |
+          docker push gcr.io/assesment-412710/your-image-name:latest
+          docker push gcr.io/assesment-412710/your-image-name:$GITHUB_SHA
 
       - name: Set up kubectl
         uses: google-github-actions/setup-gcloud@v0.2.0

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  churn-identifier
+  name:  churnapp
   labels:
     type: backend
     app: churn

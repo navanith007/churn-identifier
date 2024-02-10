@@ -21,13 +21,13 @@ jobs:
 
       - name: Push to GCR
         run: |
-          docker tag my-app:latest gcr.io/my-project/my-app:latest
-          docker push gcr.io/my-project/my-app:latest
+          docker tag my-app:latest gcr.io/assesment-412710/my-app:latest
+          docker push gcr.io/assesment-412710/my-app:latest
 
       - name: Set up kubectl
         uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          project_id: my-project
+          project_id: assesment-412710
           service_account_key: ${{ secrets.GKE_SA_KEY }}
 
       - name: Set Kubernetes context

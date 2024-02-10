@@ -17,8 +17,9 @@ jobs:
         run: docker build -t my-app:latest .
 
       - name: Authenticate with GCR
-        run: gcloud auth activate-service-account assesment-412710@assesment-412710.iam.gserviceaccount.com --key-file=${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-        run: gcloud auth configure-docker
+        run: | 
+          gcloud auth activate-service-account assesment-412710@assesment-412710.iam.gserviceaccount.com --key-file=${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          gcloud auth configure-docker
 
       - name: Push to GCR
         run: |

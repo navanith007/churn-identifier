@@ -1,12 +1,13 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: churnloadservice
+  name: churnapp
+  labels:
+    run: churnapp
 spec:
   ports:
     - port: 80
+      protocol: TCP
       targetPort: 8005
   selector:
-    type: backend
-    app: churn
-  type: LoadBalancer
+    run: churnapp

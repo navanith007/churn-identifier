@@ -1,47 +1,35 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-spec:
-  type: LoadBalancer
-  selector:
-    app: nginx
-  ports:
-  - port: 80
-    targetPort: 80
-
----
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: churn-identifier
   labels:
-    app: nginx
+    app: churn
 spec:
-  replicas: 1
+  replicas: 1 # You can adjust the number of replicas as per your requirements
   selector:
     matchLabels:
-      app: nginx
+      app: churn
   template:
     metadata:
       labels:
-        app: nginx
+        app: churn
     spec:
       containers:
-      - name: nginx
-        image: gcr.io/assesment-412710/churn-app:latest
+      - name: churn-app
+        image: gcr.io/assesment-412710/churn-app:latest # Provide the image name and tag
         ports:
-        - containerPort: 8005
-      - name: nginx-reverse-proxy
-        image: nginx:latest
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf
-      volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
+        - containerPort: 8005 # Specify the port your application listens on
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: churn-identifier
+spec:
+  selector:
+    app: churn
+  ports:
+    - protocol: TCP
+      port: 80 # Specify the port you want to expose externally
+      targetPort: 8005 # Specify the port your application listens on inside the container
+  type: LoadBalancer # Expose the service externally

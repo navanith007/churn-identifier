@@ -31,7 +31,7 @@ jobs:
           service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
       - name: Set Kubernetes context
-        run: gcloud container clusters get-credentials my-cluster --zone us-central1-a
+        run: gcloud container clusters get-credentials autopilot-cluster-2 --zone us-central1
 
       - name: Deploy to GKE
         run: kubectl apply -f k8s/deployment.yaml

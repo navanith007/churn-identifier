@@ -1,0 +1,37 @@
+name: Deploy to GKE
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t my-app:latest .
+
+      - name: Authenticate with GCR
+        run: gcloud auth configure-docker
+
+      - name: Push to GCR
+        run: |
+          docker tag my-app:latest gcr.io/assesment-412710/my-app:latest
+          docker push gcr.io/assesment-412710/my-app:latest
+
+      - name: Set up kubectl
+        uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          project_id: assesment-412710
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - name: Set Kubernetes context
+        run: gcloud container clusters get-credentials my-cluster --zone us-central1-a
+
+      - name: Deploy to GKE
+        run: kubectl apply -f k8s/deployment.yaml

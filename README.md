@@ -9,12 +9,12 @@
     <img src="https://media.sketchfab.com/models/901f21ea7d0b46748e8026b6b5f7306d/thumbnails/094af3f46ce14da0b4045a50545d1d15/3cb664da18494ecb9e9e2408d0fdd2a3.jpeg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">END TO END GPT FROM SCRATCH</h3>
+<h3 align="center">Churn Identifier Project</h3>
 
   <p align="center">
-    This repository is designed for normal purposes providing comprehensive constructing  GPT model rom cratch using PyTorch, training the model with textual data, and deploying it.
+    The Churn Identifier project is designed to analyze and predict customer churn within a business environment. It provides a set of notebooks for exploratory data analysis (EDA), model training, and deployment using containerization in Kubernetes (K8s). The project aims to help businesses understand customer behavior and proactively identify potential churn risks.
     <br />
-    <a href="https://docs.google.com/document/d/1HgSY3pI5c_SjbEVn77Ve8zJ8VWmXwi9RkZY4czJx-Qg/edit"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.google.com/document/d/1ICfyOq8OMRHw1JOOx3UeayWM0Rsyj5O8lElOD1qoYt0/edit?usp=sharing"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
@@ -54,7 +54,10 @@
 
 ## About The Project
 
-This project is owned by koo ml for which serves the utilities for koo spam identification.
+This project focuses on building a customer churn identification model using machine learning techniques. It aims to
+deploy the model seamlessly using Continuous Integration and Continuous Deployment (CI/CD) pipelines. The goal is to
+empower businesses to predict and mitigate customer churn more effectively, thereby enhancing customer retention and
+revenue.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -82,13 +85,13 @@ guidance. [python installation](https://www.freecodecamp.org/news/python-version
 ### Installation  (Mac)
 
 1. Clone the repo  
-`git clone https://github.com/navanith007/gpt_from_scratch.git`
+   `git clone https://github.com/navanith007/churn-identifier.git`
 
 2 Create python virtual environement
 
-`python3.9 -m venv llm_Env`
+`python3.9 -m venv churn_env`
 
-`source llm_Env/bin/activate`
+`source churn_env/bin/activate`
 
 3. Install the requirements
 
@@ -96,7 +99,7 @@ guidance. [python installation](https://www.freecodecamp.org/news/python-version
 
 4. Running the gpt service locally
 
-`sh start_app_service.sh`
+`sh start_app.sh`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

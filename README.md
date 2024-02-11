@@ -63,8 +63,8 @@ revenue.
 
 ### Built With
 
-* [![Next][python]][python-url]
-* [![React][Flask]][sanic-url]
+* [![Python][python]][python-url]
+* [![FastApi][FastApi]][fastapi-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,10 +146,12 @@ To make changes to this service you need follow below steps before going into pr
 
 [product-screenshot]: images/screenshot.png
 
-[python]: https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=python
+[python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 
 [python-url]: https://www.python.org/
 
 [FLask]: https://img.shields.io/badge/Flask-green?style=for-the-badge&logo=flask&logoColor=black
+[FastApi]: https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white
 
 [sanic-url]: https://sanic.dev/en/
+[fastapi-url]: https://fastapi.tiangolo.com/

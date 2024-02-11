@@ -9,12 +9,12 @@
     <img src="https://media.sketchfab.com/models/901f21ea7d0b46748e8026b6b5f7306d/thumbnails/094af3f46ce14da0b4045a50545d1d15/3cb664da18494ecb9e9e2408d0fdd2a3.jpeg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">END TO END GPT FROM SCRATCH</h3>
+<h3 align="center">Churn Identifier Project</h3>
 
   <p align="center">
-    This repository is designed for normal purposes providing comprehensive constructing  GPT model rom cratch using PyTorch, training the model with textual data, and deploying it.
+    The Churn Identifier project is designed to analyze and predict customer churn within a business environment. It provides a set of notebooks for exploratory data analysis (EDA), model training, and deployment using containerization in Kubernetes (K8s). The project aims to help businesses understand customer behavior and proactively identify potential churn risks.
     <br />
-    <a href="https://docs.google.com/document/d/1HgSY3pI5c_SjbEVn77Ve8zJ8VWmXwi9RkZY4czJx-Qg/edit"><strong>Explore the docs »</strong></a>
+    <a href="https://docs.google.com/document/d/1ICfyOq8OMRHw1JOOx3UeayWM0Rsyj5O8lElOD1qoYt0/edit?usp=sharing"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
@@ -54,14 +54,17 @@
 
 ## About The Project
 
-This project is owned by koo ml for which serves the utilities for koo spam identification.
+This project focuses on building a customer churn identification model using machine learning techniques. It aims to
+deploy the model seamlessly using Continuous Integration and Continuous Deployment (CI/CD) pipelines. The goal is to
+empower businesses to predict and mitigate customer churn more effectively, thereby enhancing customer retention and
+revenue.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
-* [![Next][python]][python-url]
-* [![React][Flask]][sanic-url]
+* [![Python][python]][python-url]
+* [![FastApi][FastApi]][fastapi-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,22 +84,23 @@ guidance. [python installation](https://www.freecodecamp.org/news/python-version
 
 ### Installation  (Mac)
 
-1. Clone the repo  
-`git clone https://github.com/navanith007/gpt_from_scratch.git`
+1. Clone the repo
 
-2 Create python virtual environement
+`git clone https://github.com/navanith007/churn-identifier.git`
 
-`python3.9 -m venv llm_Env`
+2. Create python virtual environement
 
-`source llm_Env/bin/activate`
+`python3.9 -m venv churn_env`
+
+`source churn_env/bin/activate`
 
 3. Install the requirements
 
 `pip install -r requirements.txt`
 
-4. Running the gpt service locally
+4. Running the churn identifier service locally
 
-`sh start_app_service.sh`
+`sh start_app.sh`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,10 +147,14 @@ To make changes to this service you need follow below steps before going into pr
 
 [product-screenshot]: images/screenshot.png
 
-[python]: https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=python
+[python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 
 [python-url]: https://www.python.org/
 
 [FLask]: https://img.shields.io/badge/Flask-green?style=for-the-badge&logo=flask&logoColor=black
 
+[FastApi]: https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white
+
 [sanic-url]: https://sanic.dev/en/
+
+[fastapi-url]: https://fastapi.tiangolo.com/

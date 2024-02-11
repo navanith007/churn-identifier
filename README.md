@@ -98,7 +98,7 @@ guidance. [python installation](https://www.freecodecamp.org/news/python-version
 
 `pip install -r requirements.txt`
 
-4. Running the gpt service locally
+4. Running the churn identifier service locally
 
 `sh start_app.sh`
 

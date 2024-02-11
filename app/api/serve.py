@@ -1,10 +1,11 @@
-import json
+from datetime import datetime
 
-import pandas as pd
 from fastapi import APIRouter, Depends
-from pydantic import BaseModel
 
 from app.dependencies import get_churn_model
+from app.models.input_data import InputData
+from app.services.churn_service import ChurnPredictor
+from app.helpers.logger import logger
 
 serve_router = APIRouter()
 
@@ -15,25 +16,24 @@ def hello_world():
     return {"message": "Hello, world!"}
 
 
-class InputData(BaseModel):
-    tenure: float
-    TotalCharges: float
-    OnlineSecurity: str
-    OnlineBackup: str
-    TechSupport: str
-    Contract: str
-
-
-# Endpoint to make predictions
 @serve_router.post("/is_customer_churn")
-def predict(data: InputData, model=Depends(get_churn_model)):
-    print(data)
-    X_sample_test = pd.DataFrame.from_dict(
-        [{'tenure': data.tenure, 'TotalCharges': data.TotalCharges, 'OnlineSecurity': data.OnlineSecurity,
-          'OnlineBackup': data.OnlineBackup, 'TechSupport': data.TechSupport,
-          'Contract': data.Contract}])
+def predict_churn_api(data: InputData, model=Depends(get_churn_model)):
+    """
+    Endpoint to predict customer churn.
 
-    is_churn = model.predict(X_sample_test)[0]
-    probability = model.predict_proba(X_sample_test)[0][is_churn]
+    Args:
+    - data: InputData object containing input data.
+    - model: Churn prediction model.
 
-    return {'will_customer_churn': bool(is_churn), 'probability': float(probability)}
+    Returns:
+    - Prediction result or error message.
+    """
+    timestamp = datetime.now().isoformat()
+    try:
+        logger.info(f"Received data at {timestamp} for the CustomerId {data.customerID}")
+        churn_predictor = ChurnPredictor(model)
+        result = churn_predictor.predict_churn(data)
+        return result
+    except Exception as e:
+        logger.error(f"Error for the input request at {timestamp} for the CustomerId {data.customerID} is {e}")
+        return {"error": str(e)}

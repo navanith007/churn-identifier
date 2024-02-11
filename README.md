@@ -5,9 +5,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://chat.openai.com/">
+<!--   <a href="https://chat.openai.com/">
     <img src="https://media.sketchfab.com/models/901f21ea7d0b46748e8026b6b5f7306d/thumbnails/094af3f46ce14da0b4045a50545d1d15/3cb664da18494ecb9e9e2408d0fdd2a3.jpeg" alt="Logo" width="80" height="80">
-  </a>
+  </a> -->
 
 <h3 align="center">Churn Identifier Project</h3>
 

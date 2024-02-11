@@ -9,6 +9,7 @@ spec:
     app: fast-api
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8005
+      name: http
   type: LoadBalancer

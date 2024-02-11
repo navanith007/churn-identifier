@@ -84,8 +84,9 @@ guidance. [python installation](https://www.freecodecamp.org/news/python-version
 
 ### Installation  (Mac)
 
-1. Clone the repo  
-   `git clone https://github.com/navanith007/churn-identifier.git`
+1. Clone the repo
+
+`git clone https://github.com/navanith007/churn-identifier.git`
 
 2 Create python virtual environement
 
@@ -151,7 +152,9 @@ To make changes to this service you need follow below steps before going into pr
 [python-url]: https://www.python.org/
 
 [FLask]: https://img.shields.io/badge/Flask-green?style=for-the-badge&logo=flask&logoColor=black
+
 [FastApi]: https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white
 
 [sanic-url]: https://sanic.dev/en/
+
 [fastapi-url]: https://fastapi.tiangolo.com/

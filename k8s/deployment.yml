@@ -2,18 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: churn
+  labels:
+    app: fast-api
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      run: churnapp
-  replicas: 1
+      app: fast-api
   template:
     metadata:
       labels:
-        run: churnapp
+        app: fast-api
     spec:
       containers:
-        - name: churnapp
-          image: gcr.io/assesment-412710/churn-app:latest
-          ports:
-            - containerPort: 8005
+      - name: fast-api
+        image: gcr.io/assesment-412710/churn-app:latest
+        ports:
+        - containerPort: 8005

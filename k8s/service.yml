@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: churnapp
-  labels:
-    run: churnapp
+  name: fast-api
 spec:
-  ports:
-    - port: 80
-      targetPort: 8005
   selector:
-    run: churnapp
+    app: fast-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8005

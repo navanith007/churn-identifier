@@ -46,4 +46,5 @@ jobs:
             gcloud container clusters get-credentials autopilot-cluster-2 --region us-central1
             kubectl apply -f k8s/deployment.yml
             kubectl apply -f k8s/service.yml
+            kubectl rollout restart deployment fast-api
           

@@ -88,7 +88,7 @@ guidance. [python installation](https://www.freecodecamp.org/news/python-version
 
 `git clone https://github.com/navanith007/churn-identifier.git`
 
-2 Create python virtual environement
+2. Create python virtual environement
 
 `python3.9 -m venv churn_env`
 
